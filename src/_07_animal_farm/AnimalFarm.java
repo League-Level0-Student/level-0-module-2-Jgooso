@@ -16,11 +16,23 @@ import javax.swing.JOptionPane;
 public class AnimalFarm {
 
 	AnimalFarm() {
+		String answer = "a";
 		/*
 		 * 1. Ask the user which animal they want, then play the sound of that animal.
 		 */
 		
 		/* 2. Make it so that the user can keep entering new animals. */
+		while(!answer.equals("Quit")) {
+			answer = JOptionPane.showInputDialog(null, "What Animal Noise Do You Want To Hear? \nDuck\nCow\nDog\n Type Quit to quit");
+			System.out.println(answer);
+			if (answer.equals("Duck")) {
+				playQuack();
+			}else if(answer.equals("Cow")) {
+				playMoo();
+			}else if(answer.equals("Dog")) {
+				playWoof();
+			}
+		}
 	}
 
 	void playMoo() {
